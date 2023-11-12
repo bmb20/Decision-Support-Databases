@@ -84,8 +84,8 @@ with open('/content/split_dates.csv', 'r') as csv_file:
     header = next(csv_reader)
 
     #aggiunta dei nomi/intestazioni delle due nuove colonne all'header
-    header.append('Day of the week')
-    header.append('Quarter')
+    header.append('day_of_the_week')
+    header.append('quarter')
 
     #apertura del nuovo file finale in modalità scrittura
     with open('/content/Date.csv', 'w', newline='') as new_csv_file:

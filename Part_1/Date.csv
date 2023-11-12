@@ -1,4 +1,4 @@
-year,month,day,date_pk,Day of the week,Quarter
+year,month,day,date_pk,day_of_the_week,quarter
 2013,01,01,0,Tuesday,1
 2013,01,07,1,Monday,1
 2013,01,19,2,Saturday,1
