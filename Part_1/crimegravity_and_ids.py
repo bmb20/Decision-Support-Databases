@@ -4,17 +4,17 @@ import json
 """Code to calculate Crime Gravity and then create a new file with Crime Gravity."""
 
 #apertura file json e caricamento dati da questi file
-with open('/content/dict_partecipant_age.json', 'r') as f1_file:
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/dict_partecipant_age.json', 'r') as f1_file:
     age_data = json.load(f1_file)
 
-with open('/content/dict_partecipant_status.json', 'r') as f2_file:
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/dict_partecipant_status.json', 'r') as f2_file:
     status_data = json.load(f2_file)
 
-with open('/content/dict_partecipant_type.json', 'r') as f3_file:
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/dict_partecipant_type.json', 'r') as f3_file:
     type_data = json.load(f3_file)
 
-#apertura file Police.csv in modalità lettura e  Police_temp.csv in modalità scrittura
-with open('/content/Police.csv', 'r') as input_file, open('/content/Police_temp.csv', 'w', newline='') as output_file:
+#apertura file Police_with_geoinfo.csv in modalità lettura e  Police_temp.csv in modalità scrittura
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/Police_with_geoinfo.csv', 'r') as input_file, open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/Police_temp.csv', 'w', newline='') as output_file:
     csv_reader = csv.DictReader(input_file)
 
     #Estrazione headers dal file csv di input
@@ -72,11 +72,11 @@ def aggiungi_missingIDs(file_participant, file_gun, file_geography, file_police,
             key = (row["latitude"], row["longitude"])
             geography_data[key] = row["geo_id"]
 
-    #Apertura del file "police.csv" in modalità lettura
+    #Apertura del file "police_with_geoinfo.csv" in modalità lettura
     with open(file_police, 'r') as police_file:
         police_reader = csv.DictReader(police_file)
 
-        #Prende l'intestazione dal file "police.csv" e aggiunge le nuove colonne
+        #Prende l'intestazione dal file "police_with_geoinfo.csv" e aggiunge le nuove colonne
         header = police_reader.fieldnames
         header.extend(["participant_id", "gun_id", "geo_id"])
 
@@ -97,10 +97,10 @@ def aggiungi_missingIDs(file_participant, file_gun, file_geography, file_police,
 
                 csv_writer.writerow(row)
 #path dei file da utilizzare
-file_participant = "/content/Participant.csv"
-file_gun = "/content/Gun.csv"
-file_geography = "/content/Geography.csv"
-file_police = "/content/Police_temp.csv"
-file_output = "/content/Police_final.csv"
+file_participant = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Participant.csv"
+file_gun = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Gun.csv"
+file_geography = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Geography.csv"
+file_police = "C:/Users/bianc/Desktop/LDS_Group8/Part_1//Police_temp.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Police_final.csv"
 #chiamata funzione
 aggiungi_missingIDs(file_participant, file_gun, file_geography, file_police, file_output)

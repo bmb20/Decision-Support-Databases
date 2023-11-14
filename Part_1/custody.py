@@ -1,7 +1,7 @@
 import csv
 
-file_input = "/content/police_with_geoinfo.csv"
-file_output = "/content/Custody.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Police_final.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Custody.csv"
 
 #dati_tabella = custody_id, partecipant_id, gun_id, geo_id, date_id, crime_gravity
 #funzione per creare un file custody contenente i dati della tabella

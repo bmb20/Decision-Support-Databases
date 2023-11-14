@@ -1,18 +1,6 @@
 import csv
 import pyodbc
 
-#funzione per la conversione dei valori in base ai tipi
-def convert_value(value, data_type):
-    try:
-        if data_type == 'int':
-            return int(value)
-        elif data_type == 'float':
-            return float(value)
-        else:
-            return str(value)
-    except ValueError:
-        return None
-
 #informazioni per la connessione
 server = 'tcp:lds.di.unipi.it'
 database = 'Group_ID_8_DB'
@@ -60,7 +48,7 @@ with pyodbc.connect(connection_string) as cnxn:
                 #print(row)
                 #Controllo di quale sia la tabella corrente ed esecuzione del cast in base al tipo dei dati nelle varie colonne
                 if table_name == "Date":
-                    rows=cursor.execute(sql,(int(row[0]),int(row[1]),int(row[2]),int(row[3]),row[4],int(row[5])))
+                    rows=cursor.execute(sql,(int(row[0]),int(row[1]),int(row[2]),int(row[3]),row[4],int(row[5]), row[6]))
                 if table_name == "Geography":
                     rows=cursor.execute(sql,(int(row[0]),float(row[1]),float(row[2]),row[3],row[4],row[5]))
                 if table_name == "Gun":

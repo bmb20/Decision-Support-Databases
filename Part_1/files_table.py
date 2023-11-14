@@ -26,8 +26,8 @@ def file_csv_partecipant(file_input, file_output):
             csv_writer.writerow({"participant_age_group": attributo1, "participant_gender": attributo2, "participant_status": attributo3, "participant_type": attributo4})
 
 #path dei file e chiamata di funzione
-file_input = "/content/police_with_geoinfo.csv"
-file_output = "/content/Participant_temp.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/police_with_geoinfo.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Participant_temp.csv"
 file_csv_partecipant(file_input, file_output)
 
 #funzione per l'aggiunta della colonna partencipant_id al file precedentemente creato
@@ -51,8 +51,8 @@ def aggiungi_participant_id(file_input, file_output):
             csv_writer.writerow(riga)
 
 #path dei file e chiamata di funzione
-file_input = "/content/Participant_temp.csv"
-file_output = "/content/Participant.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Participant_temp.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Participant.csv"
 aggiungi_participant_id(file_input, file_output)
 
 """File Gun"""
@@ -77,8 +77,8 @@ def file_csv_gun(file_input, file_output):
             csv_writer.writerow({"gun_stolen": attributo1, "gun_type": attributo2})
 
 
-file_input = "/content/police_with_geoinfo.csv"
-file_output = "/content/Gun_temp.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/police_with_geoinfo.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Gun_temp.csv"
 file_csv_gun(file_input, file_output)
 
 def aggiungi_gun_id(file_input, file_output):
@@ -99,8 +99,8 @@ def aggiungi_gun_id(file_input, file_output):
         for riga in righe:
             csv_writer.writerow(riga)
 
-file_input = "/content/Gun_temp.csv"
-file_output = "/content/Gun.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Gun_temp.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Gun.csv"
 aggiungi_gun_id(file_input, file_output)
 
 """File Geography"""
@@ -134,8 +134,8 @@ def file_csv_geo(file_input, file_output):
         #Scrittura delle chiavi distinte con le colonne aggiuntive nel file di output
         csv_writer.writerows(righe_distinte.values())
 
-file_input = "/content/police_with_geoinfo.csv"
-file_output = "/content/Geography_temp.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/police_with_geoinfo.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Geography_temp.csv"
 file_csv_geo(file_input, file_output)
 
 def aggiungi_geo_id(file_input, file_output):
@@ -156,6 +156,6 @@ def aggiungi_geo_id(file_input, file_output):
         for riga in righe:
             csv_writer.writerow(riga)
 
-file_input = "/content/Geography_temp.csv"
-file_output = "/content/Geography.csv"
+file_input = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Geography_temp.csv"
+file_output = "C:/Users/bianc/Desktop/LDS_Group8/Part_1/Geography.csv"
 aggiungi_geo_id(file_input, file_output)

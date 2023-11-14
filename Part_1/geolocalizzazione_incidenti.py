@@ -1,4 +1,4 @@
-"""Codice efficiente (6 minuti di esecuzione) per la geolocalizzazione degli incidenti."""
+"""Codice efficiente per la geolocalizzazione degli incidenti."""
 
 from geopy.distance import geodesic
 import csv
@@ -9,7 +9,7 @@ def calcola_distanza(coord1, coord2):
 
 #lettura del dataset geografico utilizzato, il cui output è un dizionario con le informazioni sulle città
 city_info = {}
-with open('/content/new_uscities.csv', mode='r', encoding='utf-8') as uscities_file:
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/new_uscities.csv', mode='r', encoding='utf-8') as uscities_file:
     uscities_reader = csv.DictReader(uscities_file)
     for row in uscities_reader:
         lat = float(row['lat'])
@@ -30,9 +30,9 @@ with open('/content/new_uscities.csv', mode='r', encoding='utf-8') as uscities_f
                 'longitude': lon
             }
 
-#Lettura del file "Police_final.csv"  e apertura del file "police_with_geoinfo" per la scrittura dei risultati
-with open('/content/Police_final.csv', mode='r', encoding='utf-8') as police_file:
-    with open('/content/police_with_geoinfo.csv', mode='w', newline='', encoding='utf-8') as result_file:
+#Lettura del file "Police.csv"  e apertura del file "police_with_geoinfo" per la scrittura dei risultati
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/Police.csv', mode='r', encoding='utf-8') as police_file:
+    with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/police_with_geoinfo.csv', mode='w', newline='', encoding='utf-8') as result_file:
         police_reader = csv.DictReader(police_file)
         #con fieldnames prendo i nomi degli attributi presenti nel file Police_final e ci aggiungo le tre colonne
         #quindi fieldnames è la lista che contiene i nomi delle colonne del file

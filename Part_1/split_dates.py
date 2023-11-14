@@ -27,15 +27,15 @@ def conversion(xml_file, csv_file):
             csvwriter.writerow(row)
 
 #path dei file xml e csv
-xml_file = '/content/dates.xml'
-csv_file = '/content/coverted_dates.csv'
+xml_file = 'C:/Users/bianc/Desktop/LDS_Group8/Part_1/dates.xml'
+csv_file = 'C:/Users/bianc/Desktop/LDS_Group8/Part_1/coverted_dates.csv'
 
 conversion(xml_file, csv_file)
 
 """Division of the date present in the Dates file into: month, day and year"""
 
 #path del file csv
-csv_file = '/content/coverted_dates.csv'
+csv_file = 'C:/Users/bianc/Desktop/LDS_Group8/Part_1/coverted_dates.csv'
 
 #apertura file csv nella modalità lettura
 with open(csv_file, 'r', newline='') as csvfile:
@@ -64,7 +64,7 @@ with open(csv_file, 'r', newline='') as csvfile:
         rows_with_split_data.append(new_row)
 
 #path del nuovo file csv con i file suddivisi
-csv_file = '/content/split_dates.csv'
+csv_file = 'C:/Users/bianc/Desktop/LDS_Group8/Part_1/split_dates.csv'
 
 #Scrittura dei dati della lista in un file CSV
 with open(csv_file, 'w', newline='') as csvfile:
@@ -75,10 +75,10 @@ with open(csv_file, 'w', newline='') as csvfile:
 
 """Deduction of the day of the week and the quarter of the year from the csv file obtained with the split data"""
 
-from datetime import datetime
+from datetime import datetime, date
 
 #apertura file csv in modalità lettura
-with open('/content/split_dates.csv', 'r') as csv_file:
+with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/split_dates.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
 
     header = next(csv_reader)
@@ -86,9 +86,10 @@ with open('/content/split_dates.csv', 'r') as csv_file:
     #aggiunta dei nomi/intestazioni delle due nuove colonne all'header
     header.append('day_of_the_week')
     header.append('quarter')
-
+    header.append('date')
+    
     #apertura del nuovo file finale in modalità scrittura
-    with open('/content/Date.csv', 'w', newline='') as new_csv_file:
+    with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/Date.csv', 'w', newline='') as new_csv_file:
         csv_writer = csv.writer(new_csv_file)
 
         #scrittura heading del nuovo file
@@ -103,6 +104,7 @@ with open('/content/split_dates.csv', 'r') as csv_file:
 
             #Creazione di una data completa con datatime
             complete_date = datetime(year, month, day)
+            complete_date = complete_date.date()
 
             #per ottenere il giorno della settimana come una stringa
             day_of_the_week = complete_date.strftime('%A')
@@ -113,6 +115,7 @@ with open('/content/split_dates.csv', 'r') as csv_file:
             #aggiunta del giorno della settimana e del quarto alla riga
             row.append(day_of_the_week)
             row.append(quarter)
+            row.append(complete_date)
 
             #scrittura della riga aggiornata nel nuovo file csv
             csv_writer.writerow(row)
