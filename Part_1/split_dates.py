@@ -112,7 +112,7 @@ with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/split_dates.csv', 'r') as cs
             #per ottenere il quarto dell'anno
             quarter = (complete_date.month - 1) // 3 + 1
 
-            #aggiunta del giorno della settimana e del quarto alla riga
+            #aggiunta del giorno della settimana e del quarto alla riga e della data completa
             row.append(day_of_the_week)
             row.append(quarter)
             row.append(complete_date)

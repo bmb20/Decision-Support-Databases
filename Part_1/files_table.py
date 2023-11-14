@@ -44,7 +44,7 @@ def aggiungi_participant_id(file_input, file_output):
     with open(file_output, 'w', newline='') as csv_output_file:
         csv_writer = csv.writer(csv_output_file)
         header.insert(0, "participant_id")  #Inserimento del nome della nuova colonna nell'intestazione
-        csv_writer.writerow(header)  # Scrittura dell'intestazione
+        csv_writer.writerow(header)  
 
         #scrittura delle righe
         for riga in righe:

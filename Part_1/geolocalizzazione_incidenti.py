@@ -34,13 +34,13 @@ with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/new_uscities.csv', mode='r',
 with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/Police.csv', mode='r', encoding='utf-8') as police_file:
     with open('C:/Users/bianc/Desktop/LDS_Group8/Part_1/police_with_geoinfo.csv', mode='w', newline='', encoding='utf-8') as result_file:
         police_reader = csv.DictReader(police_file)
-        #con fieldnames prendo i nomi degli attributi presenti nel file Police_final e ci aggiungo le tre colonne
+        #con fieldnames prendo i nomi degli attributi presenti nel file Police e ci aggiungo le tre colonne
         #quindi fieldnames è la lista che contiene i nomi delle colonne del file
         fieldnames = police_reader.fieldnames + ['city', 'state', 'continent']
         result_writer = csv.DictWriter(result_file, fieldnames=fieldnames)
         result_writer.writeheader()
 
-        #per ogni riga nel file police_final
+        #per ogni riga nel file police
         for row in police_reader:
             #prendo i valori delle coordinate
             latitudine = float(row['latitude'])
