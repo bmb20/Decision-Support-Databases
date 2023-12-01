@@ -1,0 +1,1957 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/28/2023 12:16:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BIANCAMARIA"
+  DTS:CreatorName="BIANCAMARIA\bianc"
+  DTS:DTSID="{E25744DA-DE01-44A8-85AA-C5D51E1B4788}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{56A52ED3-3E82-4CB1-B509-2B1CAD9B809D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4FB774E1-A83B-4E00-9443-6F049CCF4BEE}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bianc\Desktop\LDS_Group8\Part_2\Assignment_1\Results_Assignment_1.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{692826DC-C5D7-413A-B3E4-0B6DE05B6CCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="overall_crime_gravity"
+              DTS:DTSID="{782C7C96-4E99-4613-A55E-E0C6B0E884A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stolen_crime_gravity"
+              DTS:DTSID="{4E786EAC-4FCB-4133-9D01-19ABABE43FCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stolen_Gravity_Index"
+              DTS:DTSID="{86247B57-8F2F-483F-A844-132034E6A690}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{46FE673F-1E29-49D2-894D-868FF2CF808C}"
+      DTS:ObjectName="lds.di.unipi.it.Group_ID_8_DB.Group_ID_8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=lds.di.unipi.it;User ID=Group_ID_8;Initial Catalog=Group_ID_8_DB;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{46FE673F-1E29-49D2-894D-868FF2CF808C}lds.di.unipi.it.Group_ID_8_DB.Group_ID_8;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtWp2A7FIJUqWWAu8/K/EKwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABsqQnqCt9OcExTjGlcvdxEpipV65amU2j5rQcqp8tT7wAAAAAOgAAAAAIAACAAAADbcPhaU7U/nepgU2P0Ce7TG3HEAl4reCXZyDKZ1tbPSiAAAAA8y/aYlDVQNzrUGorSZnxFOh8/SfiEC0aMzQCQmoj1wEAAAABzQ5YhGFf/YLNyUmZmsw1BQXjBb2tQEThVTd8x1RBIgQTMFHnvnK0FOtknH9C3K7SCfAUZQjC4K9KIB3BNCtR7</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Attività Flusso di dati"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{EDDE7CA1-2E2E-4BEA-8D54-1564BFC8CEB2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività Flusso di dati"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Attività Flusso di dati\Accesso Custody"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="Accesso Custody"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset">[Group_ID_8].[Custody]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\Accesso Custody.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[crime_gravity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[crime_gravity]"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[crime_gravity]"
+                      name="crime_gravity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[gun_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[gun_id]"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[gun_id]"
+                      name="gun_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[geo_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[geo_id]"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[geo_id]"
+                      name="geo_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[custody_id]"
+                      dataType="i4"
+                      name="custody_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[participant_id]"
+                      dataType="i4"
+                      name="participant_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[gun_id]"
+                      dataType="i4"
+                      name="gun_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[geo_id]"
+                      dataType="i4"
+                      name="geo_id" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[date_fk]"
+                      dataType="i4"
+                      name="date_fk" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[crime_gravity]"
+                      dataType="i4"
+                      name="crime_gravity" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].ExternalColumns[incident_id]"
+                      dataType="i4"
+                      name="incident_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[crime_gravity]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[crime_gravity]"
+                      name="crime_gravity" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[gun_id]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[gun_id]"
+                      name="gun_id" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[geo_id]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output errori origine OLE DB].Columns[geo_id]"
+                      name="geo_id" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="Aggiunta di &quot;Gun_stolen&quot;"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Group_ID_8].[Gun]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Group_ID_8].[Gun]) [refTable]
+where [refTable].[gun_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="gun_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="gun_stolen" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="gun_type" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[gun_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Inputs[Input ricerca].Columns[gun_id]"
+                      cachedDataType="i4"
+                      cachedName="gun_id"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[gun_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">gun_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output corrispondenza ricerca].Columns[gun_stolen]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copia colonna"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output corrispondenza ricerca].Columns[gun_stolen]"
+                      name="gun_stolen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">gun_stolen</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="Aggiunta di &quot;State&quot;"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Group_ID_8].[Geography]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Group_ID_8].[Geography]) [refTable]
+where [refTable].[geo_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="geo_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="latitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="longitude" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="city" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="continent" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[geo_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+                  connectionManagerRefId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Inputs[Input ricerca].Columns[geo_id]"
+                      cachedDataType="i4"
+                      cachedName="geo_id"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[geo_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">geo_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output corrispondenza ricerca].Columns[state]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copia colonna"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output corrispondenza ricerca].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn">state</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+              description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+              name="Calcolo Overall_Gravity"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Inputs[Input aggregazione 1]"
+                  name="Input aggregazione 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Inputs[Input aggregazione 1].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output corrispondenza ricerca].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Inputs[Input aggregazione 1].Columns[crime_gravity]"
+                      cachedDataType="i4"
+                      cachedName="crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[crime_gravity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1]"
+                  name="Output aggregazione 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[state]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[state]"
+                      name="state">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Aggiunta di "State".Outputs[Output corrispondenza ricerca].Columns[state]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[overall_crime_gravity]"
+                      dataType="i8"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[overall_crime_gravity]"
+                      name="overall_crime_gravity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[crime_gravity]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregazione;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;3"
+              description="Aggrega i dati con funzioni quali Media, Somma, Conta numeri, Max e Min. Ad esempio, raggruppare i dati per calcolare la somma delle vendite per prodotto o la media giornaliera delle visite."
+              name="Calcolo Stolen_Gravity"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il numero approssimativo di valori Distinct in una colonna a cui viene applicata la funzione di aggregazione Count Distinct. Se si specifica un valore CountDistinctScale, il valore in CountDistinctKeys ha la precedenza."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale di estensione della memoria consentita durante l'aggregazione. I valori validi sono compresi tra 1 e 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Inputs[Input aggregazione 1]"
+                  name="Input aggregazione 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Inputs[Input aggregazione 1].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output corrispondenza ricerca].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Inputs[Input aggregazione 1].Columns[crime_gravity]"
+                      cachedDataType="i4"
+                      cachedName="crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[crime_gravity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1]"
+                  name="Output aggregazione 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica il numero approssimativo di chiavi Group By generate dall'aggregazione. Basso indica 500.000 valori di chiave, Medio indica 5 milioni di valori di chiave e Alto indica più di 25 milioni di valori di chiave. Non specificato indica che non viene utilizzato alcun valore KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifica il numero esatto di chiavi Group By generate dall'aggregazione. Se si specifica un valore KeyScale, il valore di Keys ha la precedenza."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[state]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[state]"
+                      name="state">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Aggiunta di "State".Outputs[Output corrispondenza ricerca].Columns[state]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[stolen_crime_gravity]"
+                      dataType="i8"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[stolen_crime_gravity]"
+                      name="stolen_crime_gravity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'ID della colonna di input utilizzata nell'aggregazione."
+                          name="AggregationColumnId">#{Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB].Columns[crime_gravity]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di aggregazione."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica se la colonna richieste interventi di gestione speciali perché contiene dati di dimensioni eccessive o richiede una precisione maggiore rispetto al tipo di dati float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni per il confronto di stringhe."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+              name="Calcolo Stolen_Gravity_Index"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Inputs[Input colonna derivata]"
+                  description="Input della trasformazione Colonna derivata"
+                  name="Input colonna derivata">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Inputs[Input colonna derivata].Columns[overall_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="overall_crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[overall_crime_gravity]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Inputs[Input colonna derivata].Columns[stolen_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="stolen_crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[stolen_crime_gravity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output colonna derivata]"
+                  description="Output predefinito della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  name="Output colonna derivata"
+                  synchronousInputId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output colonna derivata].Columns[Stolen_Gravity_Index]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output colonna derivata].Columns[Stolen_Gravity_Index]"
+                      name="Stolen_Gravity_Index"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">#{Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[stolen_crime_gravity]} / (DT_R4)#{Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[overall_crime_gravity]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">stolen_crime_gravity / (DT_R4)overall_crime_gravity</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output errori colonna derivata]"
+                  description="Output degli errori della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori colonna derivata"
+                  synchronousInputId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Destinazione file flat"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Destinazione file flat"
+              localeId="1033"
+              name="Destinazione file flat"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\Destinazione file flat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat]"
+                  hasSideEffects="true"
+                  name="Input destinazione file flat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[state]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[overall_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="overall_crime_gravity"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[overall_crime_gravity]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[overall_crime_gravity]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[stolen_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="stolen_crime_gravity"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[stolen_crime_gravity]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[stolen_crime_gravity]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].Columns[Stolen_Gravity_Index]"
+                      cachedDataType="r4"
+                      cachedName="Stolen_Gravity_Index"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Stolen_Gravity_Index]"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output colonna derivata].Columns[Stolen_Gravity_Index]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[state]"
+                      dataType="wstr"
+                      length="50"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[overall_crime_gravity]"
+                      dataType="i8"
+                      name="overall_crime_gravity" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[stolen_crime_gravity]"
+                      dataType="i8"
+                      name="stolen_crime_gravity" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat].ExternalColumns[Stolen_Gravity_Index]"
+                      dataType="r4"
+                      name="Stolen_Gravity_Index" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Merge join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Combina due flussi di dati ordinati in uno solo tramite join di tipo FULL, LEFT o INNER. Questa trasformazione è consigliata quando i flussi di dati possono essere ordinati alle relative origini."
+              name="Merge join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di join da eseguire."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero di colonne nella chiave di ordinamento."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se i valori Null vengono considerati come valori uguali."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica il numero massimo di buffer richiesti per input prima dell'attivazione del blocco."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join sinistro]"
+                  hasSideEffects="true"
+                  name="Input merge join sinistro">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join sinistro].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join sinistro].Columns[overall_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="overall_crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento].Columns[overall_crime_gravity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join destro]"
+                  hasSideEffects="true"
+                  name="Input merge join destro">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join destro].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join destro].Columns[stolen_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="stolen_crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento].Columns[stolen_crime_gravity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join]"
+                  isSorted="true"
+                  name="Output merge join">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[state]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[state]"
+                      name="state"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\Attività Flusso di dati\Merge join.Inputs[Input merge join sinistro].Columns[state]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[overall_crime_gravity]"
+                      dataType="i8"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[overall_crime_gravity]"
+                      name="overall_crime_gravity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\Attività Flusso di dati\Merge join.Inputs[Input merge join sinistro].Columns[overall_crime_gravity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[stolen_crime_gravity]"
+                      dataType="i8"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[stolen_crime_gravity]"
+                      name="stolen_crime_gravity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonna di input associata a questa colonna di output"
+                          name="InputColumnID">#{Package\Attività Flusso di dati\Merge join.Inputs[Input merge join destro].Columns[stolen_crime_gravity]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Distribuisce ogni riga di input a ogni riga di uno o più output. Ad esempio, creare un nuovo ramo del flusso di dati per creare una copia dei dati in modo che sia possibile mascherare alcuni valori prima di condividerli con partner esterni."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Multicast.Outputs[Output multicast 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Output multicast 2"
+                  synchronousInputId="Package\Attività Flusso di dati\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Multicast.Outputs[Output multicast 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Output multicast 1"
+                  synchronousInputId="Package\Attività Flusso di dati\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Multicast.Outputs[Output multicast 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Output multicast 3"
+                  synchronousInputId="Package\Attività Flusso di dati\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Ordinamento per State"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="Ordinamento per State"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Ordinamento per State.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State.Inputs[Input ordinamento].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[state]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State.Inputs[Input ordinamento].Columns[overall_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="overall_crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[overall_crime_gravity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento].Columns[state]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento].Columns[state]"
+                      name="state"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[state]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento].Columns[overall_crime_gravity]"
+                      dataType="i8"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento].Columns[overall_crime_gravity]"
+                      name="overall_crime_gravity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1].Columns[overall_crime_gravity]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Ordinamento per State 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordinamento;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Ordina i dati di input in ordine crescente o decrescente quando non possono essere ordinati come la relativa origine. Ad esempio, ordinare i dati delle vendite per 'customer id' prima che vengano scritti in un file flat e recapitati a un altro reparto. Nota: questa trasformazione non è consigliata per i flussi di dati di grandi dimensioni."
+              name="Ordinamento per State 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se la trasformazione Ordinamento rimuove le righe con valori di ordinamento duplicati."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il numero massimo di thread da utilizzare per l'ordinamento."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Ordinamento per State 1.Inputs[Input ordinamento]"
+                  name="Input ordinamento">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State 1.Inputs[Input ordinamento].Columns[state]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[state]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State 1.Inputs[Input ordinamento].Columns[stolen_crime_gravity]"
+                      cachedDataType="i8"
+                      cachedName="stolen_crime_gravity"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[stolen_crime_gravity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica le opzioni di confronto per i dati di tipo carattere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifica il tipo di ordinamento della colonna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento]"
+                  isSorted="true"
+                  name="Output ordinamento">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento].Columns[state]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento].Columns[state]"
+                      name="state"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[state]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento].Columns[stolen_crime_gravity]"
+                      dataType="i8"
+                      lineageId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento].Columns[stolen_crime_gravity]"
+                      name="stolen_crime_gravity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifica l'identificatore di derivazione della colonna di input associata a questa colonna di output."
+                          name="SortColumnId">#{Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1].Columns[stolen_crime_gravity]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Suddivisione condizionale;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Indirizza righe di dati a output diversi a seconda del contenuto dei dati. Usare le condizioni (espressioni SSIS) per specificare le righe da indirizzare. Ad esempio, separare i record da eliminare da quelli pronti per essere caricati oppure indirizzare unicamente un subset di record."
+              name="Suddivisione condizionale per avere solo Stolen_Record"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Inputs[Input suddivisione condizionale]"
+                  description="Input della trasformazione Suddivisione condizionale"
+                  name="Input suddivisione condizionale">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Inputs[Input suddivisione condizionale].Columns[gun_stolen]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="gun_stolen"
+                      lineageId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output corrispondenza ricerca].Columns[gun_stolen]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[stolen_records]"
+                  description="Output 1 della trasformazione Suddivisione condizionale"
+                  errorOrTruncationOperation="Calcolo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="stolen_records"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Inputs[Input suddivisione condizionale]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica l'espressione. Questa versione dell'espressione utilizza gli identificatori di derivazione anziché i nomi di colonna."
+                      name="Expression">#{Package\Attività Flusso di dati\Aggiunta di "Gun_stolen".Outputs[Output corrispondenza ricerca].Columns[gun_stolen]} == "Stolen"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifica la versione descrittiva dell'espressione. Questa versione dell'espressione utilizza i nomi di colonna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">gun_stolen == "Stolen"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la posizione della condizione nell'elenco delle condizioni valutate dalla trasformazione. L'ordine di valutazione è crescente, dal valore più basso al più alto."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[Output predefinito suddivisione condizionale]"
+                  description="Output predefinito per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  name="Output predefinito suddivisione condizionale"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Inputs[Input suddivisione condizionale]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[Output errori suddivisione condizionale]"
+                  description="Output degli errori per la trasformazione Suddivisione condizionale"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori suddivisione condizionale"
+                  synchronousInputId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Inputs[Input suddivisione condizionale]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[Output errori suddivisione condizionale].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[Output errori suddivisione condizionale].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output aggregazione 1]"
+              endId="Package\Attività Flusso di dati\Ordinamento per State 1.Inputs[Input ordinamento]"
+              name="Output aggregazione 1"
+              startId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Outputs[Output aggregazione 1]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output aggregazione 11]"
+              endId="Package\Attività Flusso di dati\Ordinamento per State.Inputs[Input ordinamento]"
+              name="Output aggregazione 1"
+              startId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Outputs[Output aggregazione 1]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
+              endId="Package\Attività Flusso di dati\Destinazione file flat.Inputs[Input destinazione file flat]"
+              name="Output colonna derivata"
+              startId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Outputs[Output colonna derivata]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
+              endId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Inputs[Input ricerca]"
+              name="Output corrispondenza ricerca"
+              startId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
+              endId="Package\Attività Flusso di dati\Multicast.Inputs[Multicast Input 1]"
+              name="Output corrispondenza ricerca"
+              startId="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output merge join]"
+              endId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index.Inputs[Input colonna derivata]"
+              name="Output merge join"
+              startId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output multicast 1]"
+              endId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Inputs[Input suddivisione condizionale]"
+              name="Output multicast 1"
+              startId="Package\Attività Flusso di dati\Multicast.Outputs[Output multicast 1]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output multicast 2]"
+              endId="Package\Attività Flusso di dati\Calcolo Overall_Gravity.Inputs[Input aggregazione 1]"
+              name="Output multicast 2"
+              startId="Package\Attività Flusso di dati\Multicast.Outputs[Output multicast 2]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output ordinamento]"
+              endId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join sinistro]"
+              name="Output ordinamento"
+              startId="Package\Attività Flusso di dati\Ordinamento per State.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output ordinamento1]"
+              endId="Package\Attività Flusso di dati\Merge join.Inputs[Input merge join destro]"
+              name="Output ordinamento"
+              startId="Package\Attività Flusso di dati\Ordinamento per State 1.Outputs[Output ordinamento]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
+              endId="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;.Inputs[Input ricerca]"
+              name="Output origine OLE DB"
+              startId="Package\Attività Flusso di dati\Accesso Custody.Outputs[Output origine OLE DB]" />
+            <path
+              refId="Package\Attività Flusso di dati.Paths[stolen_records]"
+              endId="Package\Attività Flusso di dati\Calcolo Stolen_Gravity.Inputs[Input aggregazione 1]"
+              name="stolen_records"
+              startId="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record.Outputs[stolen_records]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Attività Flusso di dati"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Attività Flusso di dati">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Attività Flusso di dati\Calcolo Overall_Gravity"
+          TopLeft="67.6403483831829,179.852941023643" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Attività Flusso di dati\Ordinamento per State 1"
+          TopLeft="578.339517133404,302.735293935997" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\Attività Flusso di dati\Merge join"
+          TopLeft="351.196659379295,258.735294027156" />
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;"
+          TopLeft="286.100000521541,17.1470588396165" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Attività Flusso di dati\Calcolo Stolen_Gravity"
+          TopLeft="582.900000968575,220.735293981577" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Attività Flusso di dati\Destinazione file flat"
+          TopLeft="332.625230640608,399.794117485517" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Attività Flusso di dati\Multicast"
+          TopLeft="102.771428706755,88.3647058133126" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;"
+          TopLeft="658.24285839273,21.9117647440891" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Attività Flusso di dati\Ordinamento per State"
+          TopLeft="66.1966588364662,261.617646939511" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Attività Flusso di dati\Accesso Custody"
+          TopLeft="79.6714287173993,18.499999988605" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Attività Flusso di dati\Calcolo Stolen_Gravity_Index"
+          TopLeft="312.625230661896,330.794117519703" />
+        <NodeLayout
+          Size="339.2,41.6"
+          Id="Package\Attività Flusso di dati\Suddivisione condizionale per avere solo Stolen_Record"
+          TopLeft="506.471429441169,128.794117565283" />
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[stolen_records]"
+          TopLeft="675.285715204872,170.394117565283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.341176416294"
+              Start="0,0"
+              End="0,42.841176416294">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.841176416294" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.89765625,15.889338208147,65.7953125,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output ordinamento1]"
+          TopLeft="578.339517133404,323.535293935997">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-99.1428577541094,-43.9999999088409"
+              Start="0,0"
+              End="-91.6428577541094,-43.9999999088409">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-45.5714288770547,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-45.5714288770547,0"
+                    Point2="-49.5714288770547,0"
+                    Point3="-49.5714288770547,-4" />
+                  <mssgle:LineSegment
+                    End="-49.5714288770547,-39.9999999088409" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49.5714288770547,-39.9999999088409"
+                    Point2="-49.5714288770547,-43.9999999088409"
+                    Point3="-53.5714288770547,-43.9999999088409" />
+                  <mssgle:LineSegment
+                    End="-91.6428577541094,-43.9999999088409" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output ordinamento]"
+          TopLeft="251.796658836466,280.976470483334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.4000005428285,0"
+              Start="0,0"
+              End="91.9000005428285,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91.9000005428285,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output merge join]"
+          TopLeft="417.910945020595,300.335294027156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4588234925466"
+              Start="0,0"
+              End="0,22.9588234925466">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9588234925466" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
+          TopLeft="482.900000521541,40.3294117918528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.342857871189,0"
+              Start="0,0"
+              End="167.842857871189,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="167.842857871189,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="17.1355500293445,5,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output colonna derivata]"
+          TopLeft="420.025230651252,372.394117519703">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.3999999658138"
+              Start="0,0"
+              End="0,19.8999999658138">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8999999658138" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output aggregazione 11]"
+          TopLeft="160.118503609825,221.452941023643">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.1647059158672"
+              Start="0,0"
+              End="0,32.6647059158672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.6647059158672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output aggregazione 1]"
+          TopLeft="675.21975905099,262.335293981577">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.39999995442"
+              Start="0,0"
+              End="0,32.89999995442">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.89999995442" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
+          TopLeft="236.471428717399,38.6235294141107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.6285718041417,0"
+              Start="0,0"
+              End="42.1285718041417,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.1285718041417,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca1]"
+          TopLeft="742.24285839273,63.5117647440891">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-579.471429685975,24.8529410692235"
+              Start="0,0"
+              End="-579.471429685975,17.3529410692235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.42647053461175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.42647053461175"
+                    Point2="0,12.4264705346117"
+                    Point3="-4,12.4264705346117" />
+                  <mssgle:LineSegment
+                    End="-575.471429685975,12.4264705346117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-575.471429685975,12.4264705346117"
+                    Point2="-579.471429685975,12.4264705346117"
+                    Point3="-579.471429685975,16.4264705346117" />
+                  <mssgle:LineSegment
+                    End="-579.471429685975,17.3529410692235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-356.521593749237,17.4264705346117,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output multicast 2]"
+          TopLeft="162.005888544969,129.964705813313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.8882352103308"
+              Start="0,0"
+              End="0,42.3882352103308">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.3882352103308" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output multicast 1]"
+          TopLeft="222.771428706755,109.164705813313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="283.700000734414,40.4294117519708"
+              Start="0,0"
+              End="276.200000734414,40.4294117519708">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="137.850000367207,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.850000367207,0"
+                    Point2="141.850000367207,0"
+                    Point3="141.850000367207,4" />
+                  <mssgle:LineSegment
+                    End="141.850000367207,36.4294117519708" />
+                  <mssgle:CubicBezierSegment
+                    Point1="141.850000367207,36.4294117519708"
+                    Point2="141.850000367207,40.4294117519708"
+                    Point3="145.850000367207,40.4294117519708" />
+                  <mssgle:LineSegment
+                    End="276.200000734414,40.4294117519708" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\Aggiunta di &quot;Gun_stolen&quot;">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_ID_8].[Gun]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\Aggiunta di &quot;State&quot;">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Group_ID_8].[Geography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\Accesso Custody">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
