@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{2EE5B4C3-ED16-46F9-9AE5-87AC18054403}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{C0FEEA4C-3974-4696-AB35-7E7663BA612A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -63,6 +63,74 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0C411AD1-13B3-4EC8-A5E5-55FED2E4D5E2}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\bianc\Desktop\LDS_Group8\Part_2\Assignment_2\LogErrors_2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month"
+              DTS:DTSID="{A8382EC6-1185-4F87-B7D6-3104157F06D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="crime_gravity_month"
+              DTS:DTSID="{5BC40A04-895B-496E-80F4-994424670459}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{C0FA148C-8B95-4F9A-8F6F-3966F5295A50}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="crime_gravity_year"
+              DTS:DTSID="{B39BE7A3-C7D2-4AAC-8BAB-C7FF01B996C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{53CDBE39-49C2-4828-A111-2886545671DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{AA34B394-E33B-4D9D-AAC6-FC2FDE09EDA1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[lds.di.unipi.it.Group_ID_8_DB.Group_ID_8]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{D3F21553-3B18-43BB-859F-FA2B3393936B}"
@@ -75,13 +143,30 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtWp2A7FIJUqWWAu8/K/EKwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAConSVnw3C3C/HyrEIYHKeJFSO5oktsyfxBey2Ra0ESTAAAAAAOgAAAAAIAACAAAAB/0P8DNZQS5OSbSLBO6PT2bgN5B1en+nKIwEiQzMg03iAAAADz0QUWiInPtOgWiXvATuBMgfIc8t815fkD5nmLb5vPqUAAAADaDLjrZctFs67LVdssftTuc3KGB8xO1PE4u1ZeJa9y0AQXEJiVE2kidcrZbwVhW1VCv8QU3Z0sLDXUboswTky6</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtWp2A7FIJUqWWAu8/K/EKwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABjgvLI4W+az4eSfSLSRk9lIPT3i3CiiNAUvTq7nLU2sAAAAAAOgAAAAAIAACAAAADBHeLr3gBRyv0gsYMYPN/kdtAyvcLTOchu98xIrHhecSAAAACsXRjGSpaF1umLkkEm0YkdaylLVaFM6WCSyW7LRMASC0AAAAAgRxhVe2nzlEnllfZb9TBbpAvxPLWrRezFjn+Zapz/T4NmM2dhdxeRi3QOMFvvnarRKq84P556x9Z0q28VvvJ/</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Attività Esegui processo"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Attività Esegui processo"
+      DTS:DTSID="{F110635C-BE58-4111-92BD-1B3819AADDCA}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività Esegui processo"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
+          Arguments="C:\Users\bianc\Desktop\LDS_Group8\Part_2\Assignment_2\Results_Assignment_2" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Attività Flusso di dati"
       DTS:CreationName="Microsoft.Pipeline"
@@ -279,7 +364,7 @@
                       refId="Package\Attività Flusso di dati\Calcolo Percentuale.Outputs[Output colonna derivata].Columns[percentage_crime_gravity]"
                       dataType="numeric"
                       errorOrTruncationOperation="Calcolo"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="RedirectRow"
                       lineageId="Package\Attività Flusso di dati\Calcolo Percentuale.Outputs[Output colonna derivata].Columns[percentage_crime_gravity]"
                       name="percentage_crime_gravity"
                       precision="38"
@@ -326,6 +411,110 @@
                   <externalMetadataColumns />
                 </output>
               </outputs>
+            </component>
+            <component
+              refId="Package\Attività Flusso di dati\Destinazione file errori"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destinazione file flat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;1"
+              description="Destinazione file flat"
+              localeId="1033"
+              name="Destinazione file errori"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifica se i dati verranno sovrascritti o accodati nel file di destinazione."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifica il testo da scrivere nel file di destinazione prima della scrittura dei dati."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando il qualificatore di testo è abilitato, specifica se il qualificatore di testo nei dati scritti nel file di destinazione verrà o meno preceduto da un carattere di escape."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Attività Flusso di dati\Destinazione file errori.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat]"
+                  hasSideEffects="true"
+                  name="Input destinazione file flat">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].Columns[month]"
+                      cachedDataType="i4"
+                      cachedName="month"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[month]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[month]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].Columns[crime_gravity_month]"
+                      cachedDataType="i8"
+                      cachedName="crime_gravity_month"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[crime_gravity_month]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[crime_gravity_month]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[year]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].Columns[crime_gravity_year]"
+                      cachedDataType="i8"
+                      cachedName="crime_gravity_year"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[crime_gravity_year]"
+                      lineageId="Package\Attività Flusso di dati\Merge join.Outputs[Output merge join].Columns[crime_gravity_year]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Percentuale.Outputs[Output errori colonna derivata].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Attività Flusso di dati\Calcolo Percentuale.Outputs[Output errori colonna derivata].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[month]"
+                      dataType="i4"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[crime_gravity_month]"
+                      dataType="i8"
+                      name="crime_gravity_month" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[crime_gravity_year]"
+                      dataType="i8"
+                      name="crime_gravity_year" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
             </component>
             <component
               refId="Package\Attività Flusso di dati\Destinazione file flat"
@@ -1411,6 +1600,11 @@ where [refTable].[date_pk] = ?</property>
               name="Output corrispondenza ricerca"
               startId="Package\Attività Flusso di dati\Join con Date.Outputs[Output corrispondenza ricerca]" />
             <path
+              refId="Package\Attività Flusso di dati.Paths[Output errori colonna derivata]"
+              endId="Package\Attività Flusso di dati\Destinazione file errori.Inputs[Input destinazione file flat]"
+              name="Output errori colonna derivata"
+              startId="Package\Attività Flusso di dati\Calcolo Percentuale.Outputs[Output errori colonna derivata]" />
+            <path
               refId="Package\Attività Flusso di dati.Paths[Output merge join]"
               endId="Package\Attività Flusso di dati\Calcolo Percentuale.Inputs[Input colonna derivata]"
               name="Output merge join"
@@ -1445,6 +1639,16 @@ where [refTable].[date_pk] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo]"
+      DTS:CreationName=""
+      DTS:DTSID="{72D3645E-BF99-465E-A36A-07744FA1CCD7}"
+      DTS:From="Package\Attività Flusso di dati"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo"
+      DTS:To="Package\Attività Esegui processo" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
 <!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
@@ -1456,11 +1660,37 @@ where [refTable].[date_pk] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,41.6"
           Id="Package\Attività Flusso di dati"
-          TopLeft="5.5,5.5" />
+          TopLeft="6.92857143161248,5.5" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Attività Esegui processo"
+          TopLeft="5.50000000000001,114.852941080619" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo]"
+          TopLeft="97.6142857158062,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.7529410806185"
+              Start="0,0"
+              End="0,60.2529410806185">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.2529410806185" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1470,37 +1700,37 @@ where [refTable].[date_pk] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Attività Flusso di dati\GroupBy per mese"
-          TopLeft="350.500000478966,165.264705847498" />
+          Size="142.4,41.6"
+          Id="Package\Attività Flusso di dati\Join con Date"
+          TopLeft="64.7857143480558,82.9117646643241" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Attività Flusso di dati\Multicast"
+          TopLeft="360.500000755702,78.9117646415341" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Attività Flusso di dati\Calcolo Percentuale"
           TopLeft="402.642857477373,336.499999920235" />
         <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Attività Flusso di dati\Join con Date"
-          TopLeft="64.7857143480558,82.9117646643241" />
-        <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\Attività Flusso di dati\Ordinamento per mese"
-          TopLeft="398.357143118673,410.088235176146" />
+          Size="128,41.6"
+          Id="Package\Attività Flusso di dati\Merge join"
+          TopLeft="219.785714294837,335.558823424176" />
         <NodeLayout
           Size="173.6,41.6"
           Id="Package\Attività Flusso di dati\Destinazione file flat"
           TopLeft="622.642858328868,408.935293833442" />
         <NodeLayout
-          Size="128,41.6"
-          Id="Package\Attività Flusso di dati\Merge join"
-          TopLeft="219.785714294837,335.558823424176" />
-        <NodeLayout
           Size="194.4,41.6"
           Id="Package\Attività Flusso di dati\Ordinamento per anno 1"
           TopLeft="329.785714592861,240.558823481151" />
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Attività Flusso di dati\GroupBy per Anno"
-          TopLeft="46.2142856093693,168.911764641534" />
+          Size="165.6,41.6"
+          Id="Package\Attività Flusso di dati\GroupBy per mese"
+          TopLeft="350.500000478966,165.264705847498" />
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Attività Flusso di dati\Ordinamento per mese"
+          TopLeft="398.357143118673,410.088235176146" />
         <NodeLayout
           Size="193.6,41.6"
           Id="Package\Attività Flusso di dati\Accesso Tabella Custody"
@@ -1509,6 +1739,10 @@ where [refTable].[date_pk] = ?</property>
           Size="184.8,41.6"
           Id="Package\Attività Flusso di dati\Ordinamento per anno"
           TopLeft="38.3571426077765,236.558823458361" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Attività Flusso di dati\GroupBy per Anno"
+          TopLeft="46.2142856093693,168.911764641534" />
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output origine OLE DB]"
           TopLeft="137.107142932409,57.6588235153356">
@@ -1622,6 +1856,28 @@ where [refTable].[date_pk] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output multicast 1]"
+          TopLeft="436.233333950667,120.511764641534">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.7529412059639"
+              Start="0,0"
+              End="0,37.2529412059639">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2529412059639" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Output merge join]"
           TopLeft="347.785714294837,356.829411672206">
           <EdgeLayout.Curve>
@@ -1641,6 +1897,30 @@ where [refTable].[date_pk] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
+          TopLeft="207.185714348056,101.711764652929">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.314286407646,0"
+              Start="0,0"
+              End="145.814286407646,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="145.814286407646,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.12126429757296,5,133.5717578125,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1709,34 +1989,6 @@ where [refTable].[date_pk] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Attività Flusso di dati\Multicast"
-          TopLeft="360.500000755702,78.9117646415341" />
-        <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output corrispondenza ricerca]"
-          TopLeft="207.185714348056,101.711764652929">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="153.314286407646,0"
-              Start="0,0"
-              End="145.814286407646,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="145.814286407646,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.12126429757296,5,133.5717578125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Attività Flusso di dati.Paths[Multicast Output 1]"
           TopLeft="401.833334089035,120.511764641534">
@@ -1771,31 +2023,62 @@ where [refTable].[date_pk] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Attività Flusso di dati\Destinazione file errori"
+          TopLeft="624.785715604011,251.735293901812" />
         <EdgeLayout
-          Id="Package\Attività Flusso di dati.Paths[Output multicast 1]"
-          TopLeft="436.233333950667,120.511764641534">
+          Id="Package\Attività Flusso di dati.Paths[Output errori colonna derivata]"
+          TopLeft="487.842857477373,336.499999920235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.7529412059639"
+              EndConnector="228.942858126638,-43.1647060184227"
               Start="0,0"
-              End="0,37.2529412059639">
+              End="228.942858126638,-35.6647060184227">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.2529412059639" />
+                    End="0,-17.5823530092113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.5823530092113"
+                    Point2="0,-21.5823530092113"
+                    Point3="4,-21.5823530092113" />
+                  <mssgle:LineSegment
+                    End="224.942858126638,-21.5823530092113" />
+                  <mssgle:CubicBezierSegment
+                    Point1="224.942858126638,-21.5823530092113"
+                    Point2="228.942858126638,-21.5823530092113"
+                    Point3="228.942858126638,-25.5823530092113" />
+                  <mssgle:LineSegment
+                    End="228.942858126638,-35.6647060184227" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="47.3005501570692,-16.5823530092113,134.3417578125,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Attività Flusso di dati\Accesso Tabella Custody">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Attività Flusso di dati\Join con Date">
     <Properties>
@@ -1816,19 +2099,6 @@ where [refTable].[date_pk] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Attività Flusso di dati\Accesso Tabella Custody">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1040"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{7016AEE3-2795-4A1F-8FFD-DA4A02FAB884}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{58967DC2-173F-4B5C-A753-2D682B831EB3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -76,13 +76,30 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9btXmkgilUK+0NQqKyhFmwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADifU3Xk2k1LR9Dto97NS1YxTrKMUGsY/sefWLS0IC2zAAAAAAOgAAAAAIAACAAAACaO6OYDEwoANMDqxUK71ZJ9jqdvnMsUt/IUtc/3Z9vfSAAAAD/yufUccV3niRrVUj7NDVktnOkiM88eKnskSpLPGOEyEAAAAAL8HKcXabYGvzVCtD500mv0Omzm7OzgQYikSJyx0djNSICJ3Xwicqc1sKotOgyPwaHpumrXrt1dLddLNMjHCpV</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtWp2A7FIJUqWWAu8/K/EKwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgeekun/id+drQ1h+enhjkqq41alIojnO4jnJdggB+NwAAAAAOgAAAAAIAACAAAACuHorVseYPMKg8iJHGsxK5GQOLYjUNVTuox9iofdJCeiAAAADZPQfo0JE+tpVW3d0gA5E9AXtvwePnGvZ7L7ZgtPMtQUAAAAC2+J/XEQ+bbxijMiXZhLFqQ0fgT4oVKYHd5KmTm6pIbVD+lztBS6KVV5X4fiapKILhDeqqTaS7xCIxLovEb5lE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Attività Esegui processo"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Attività Esegui processo"
+      DTS:DTSID="{B0D3104F-1EDF-40B0-9D6B-13D40E9A73E1}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività Esegui processo"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE"
+          Arguments="C:\Users\bianc\Desktop\LDS_Group8\Part_2\Assignment_0\Results_Assignment_0.csv" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Attività Flusso di dati"
       DTS:CreationName="Microsoft.Pipeline"
@@ -802,6 +819,16 @@ where [refTable].[date_pk] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo]"
+      DTS:CreationName=""
+      DTS:DTSID="{C9A90CD9-8FFE-49EA-BCF5-16AB27F49FBF}"
+      DTS:From="Package\Attività Flusso di dati"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo"
+      DTS:To="Package\Attività Esegui processo" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
 <!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
@@ -813,11 +840,37 @@ where [refTable].[date_pk] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,41.6"
           Id="Package\Attività Flusso di dati"
           TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Attività Esegui processo"
+          TopLeft="4.78571428419373,115.617646962301" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo]"
+          TopLeft="96.5428571420969,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.5176469623012"
+              Start="0,0"
+              End="0,61.0176469623012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.0176469623012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
