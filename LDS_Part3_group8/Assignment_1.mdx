@@ -1,0 +1,8 @@
+WITH 
+  MEMBER Total_Crime AS
+    ([Geography].[Geo].currentmember.parent,
+      [Measures].[Crime Gravity]) 
+SELECT
+  {[Measures].[Crime Gravity], Total_Crime} ON COLUMNS,
+  NON EMPTY ([Geography].[Geo].[State], [Geography].[City].[City]) ON ROWS
+FROM [Group ID 8 DB];

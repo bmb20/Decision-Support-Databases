@@ -1,0 +1,15 @@
+WITH
+  MEMBER crime_gravity AS
+   iif ([Measures].[Crime Gravity] = null, 0, [Measures].[Crime Gravity] )
+   member prev_crime as
+([Date].[DayMonthQuarterYear].currentmember.prevmember, [Measures].[Crime Gravity] )
+  MEMBER [Measures].[Percentage_Variation] AS
+    IIF(prev_crime =0,0,(crime_gravity - prev_crime) / prev_crime),
+    FORMAT_STRING = "Percent"
+
+SELECT
+  {[Measures].[Crime_Gravity], [Measures].[Percentage_Variation]} ON COLUMNS,
+  ORDER(NONEMPTYCROSSJOIN([Date].[DayMonthQuarterYear].[Year],
+      [Participant].[Participant Age Group].[Participant Age Group]), [Measures].[Percentage_Variation],BDESC) ON ROWS
+FROM [Group ID 8 DB]
+

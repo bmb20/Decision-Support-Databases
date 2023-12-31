@@ -1,0 +1,9 @@
+WITH MEMBER Ratio_Crime_Gravity AS
+    IIF([Date].[DayMonthQuarterYear].CurrentMember.PrevMember IS NULL ,0,
+      ([Date].[DayMonthQuarterYear].CurrentMember,
+    [Measures].[Crime Gravity]) / ([Date].[DayMonthQuarterYear].CurrentMember.lag(1),
+    [Measures].[Crime Gravity]))
+SELECT
+  {[Measures].[Crime Gravity], Ratio_Crime_Gravity } ON COLUMNS,
+  NON EMPTY [Date].[DayMonthQuarterYear].[Year].Members ON ROWS
+FROM [Group ID 8 DB];
